@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
-
+import NavBar from '../Componants/NavBar'
+import Footer from '../Componants/Footer'
 function Home(props) {
     const Navigate = useNavigate();
     const [plchldrText, setPlchldrText] = useState("Nickname");
@@ -23,9 +24,10 @@ function Home(props) {
     }
 
     return (
-        <div className="w-screen h-screen bg-cyan-600 flex justify-center">
+        <div className="w-screen  bg-cyan-600 flex-wrap justify-center">
+            <NavBar />
             <div className="flex">
-                <div className="h-screen w-screen justify-center flex-wrap ">
+                <div className="h-4/5 w-screen justify-center flex-wrap ">
                     <div className="border-solid font-bold flex flex-col items-center">
                         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Welcome to TicTacToad</h1>
                         <p className="mb-6 text-lg font-normal text-grey-900 lg:text-xl sm:px-16 xl:px-48 dark:text-grey-900">Please insert a nickname.</p>
@@ -44,6 +46,7 @@ function Home(props) {
                 </div>
 
             </div>
+            <Footer />
         </div>
     );
 }
